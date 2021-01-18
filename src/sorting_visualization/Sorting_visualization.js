@@ -255,7 +255,7 @@ function Sorting_visualization() {
 
 
     function heapsort(){
-        alert("Not Availabel ! Will add this function soon");
+        alert("Not Available ! Will add this function soon");
     }
 
     return (
