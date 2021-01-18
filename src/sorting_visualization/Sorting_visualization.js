@@ -266,7 +266,7 @@ function Sorting_visualization() {
                 <input type="range" id="input__slider" className="input__slider" min="20" max="200" onChange={changearray} value={size} step="1" />
             </div>
             <div className="input__style">
-                <label for="input__slider">Speed of Array</label>
+                <label for="input__slider">Speed of Sorting</label>
                 <input type="range" id="input__slider2" className="input__slider" min={minspeed} max={maxspeed} onChange={changespeed} value={speed} step="1" />
             </div>
             <div className="Buttons" >
