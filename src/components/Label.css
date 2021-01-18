@@ -1,0 +1,15 @@
+.Label{
+    background-color: lightskyblue;
+    height:80px;
+    margin-top: 10px;
+    font-size: 20px;
+    
+}
+h2{
+    margin: 0 auto;
+    color: white;
+}
+.Label__inner{
+   padding: 15px;
+   
+}
