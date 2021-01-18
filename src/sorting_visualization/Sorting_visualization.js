@@ -86,20 +86,20 @@ function Sorting_visualization() {
             for (let j = i + 1; j < a.length; j++) {
                 if (a[min] > a[j]) {
                     min = j;
-                    update(a, j, "red",3);
-                    update(a, j, "greenyellow",3);
+                    update(a, j, "red",2);
+                    update(a, j, "greenyellow",2);
                 }
                 else {
-                    update(a, j, "blue",3);
-                    update(a, j, "greenyellow",3);
+                    update(a, j, "blue",2);
+                    update(a, j, "greenyellow",2);
                 }
             }
 
 
             [a[i], a[min]] = [a[min], a[i]];
-            update_height(a, i, "orange",3);
+            update_height(a, i, "orange",2);
         }
-        update(a, a.length - 1, "orange",3);
+        update(a, a.length - 1, "orange",2);
         setTimeout(()=>{changestate(false)},c_delay);
         c_delay = delay;
     }
