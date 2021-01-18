@@ -175,7 +175,7 @@ function Sorting_visualization() {
         }
         for(let i=0;i<a.length;i++){
             arr[start+i] = a[i];
-            update_height(arr,start+i,color); 
+            update_height(arr,start+i,color,1); 
         }
     }
 
