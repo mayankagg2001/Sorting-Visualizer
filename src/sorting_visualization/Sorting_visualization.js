@@ -48,14 +48,15 @@ function Sorting_visualization() {
     }
 
     function generatearray() {
-        if(running) return;
-        const number = document.querySelector('#input__slider').value;
+        if(!running) 
+        {const number = document.querySelector('#input__slider').value;
         const a = randomarray(number);
         let x = document.querySelectorAll('.arrays');
         for(let i=0;i<x.length;i++)
         {x[i].style.backgroundColor = "greenyellow";}
         setarray(a);
     }
+}
 
     function update_height(a, i, color,d) {
         const a1 = a.slice();
