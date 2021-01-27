@@ -48,7 +48,7 @@ function Sorting_visualization() {
     }
 
     function generatearray() {
-        if(!running) 
+        if(running) return; 
         {const number = document.querySelector('#input__slider').value;
         const a = randomarray(number);
         let x = document.querySelectorAll('.arrays');
