@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import '../components/Buttons.css'
 import './sorting_visualization.css';
 import Label from '../components/Label'
@@ -255,9 +255,45 @@ function Sorting_visualization() {
         c_delay = delay;
     }
 
+    function heapify(a,n,i){
+        let arr = a.slice();
+        let largest = i;
+        const index = i;
+        let l = 2*i+1;
+        let r = 2*i+2;
+        if(l<n && arr[l]>arr[largest])
+        largest = l;
+        if(r<n && arr[r]>arr[largest])
+        largest = r;
+        if(largest!=i)
+        {   
+            update(arr,index,"blue",2);
+            update(arr,largest,"blue",2);
+            
+            [arr[i],arr[largest]] = [arr[largest],arr[i]];
+            update_height(arr,largest,"greenyellow",2);
+            update(arr,index,"greenyellow",2);
+            arr = heapify(arr,n,largest)
+        }
+        return arr;
+    }
 
     function heapsort(){
-        alert("Not Available ! Will add this function soon");
+        if(running) return;
+        let a = array.slice();
+        const n = a.length;
+        changestate(true);
+        for(let i=n/2;i>=0;i--) a = heapify(a,n,i);
+        for(let i=n-1;i>0;i--) {
+            [a[0],a[i]] = [a[i],a[0]];
+            update(a,i,"orange",2);
+            a =  heapify(a,i,0);
+           
+        }
+        update_height(a,0,"orange",2);
+        setTimeout(()=>{changestate(false);},c_delay);
+        c_delay = delay;   
+
     }
 
     return (
