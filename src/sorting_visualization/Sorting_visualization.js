@@ -4,7 +4,7 @@ import './sorting_visualization.css';
 import Label from '../components/Label'
 
 const minspeed = 10;
-const maxspeed = 100;
+const maxspeed = 110;
 const max = 380;
 const min = 10;
 function Sorting_visualization() {
@@ -18,7 +18,7 @@ function Sorting_visualization() {
     
     
     //var delay = (maxspeed - speed + minspeed);
-    var delay = (40000/(size*speed));
+    var delay = (55000/(size*speed));
     var c_delay = 0;
 
 
@@ -133,17 +133,17 @@ function Sorting_visualization() {
         for (let i = 0; i < a.length - 1; i++) {
             for (let j = 0; j < a.length - 1 - i; j++) {
                 if (a[j] > a[j + 1]) {
-                    update(a, j, "blue",4);
+                    update(a, j, "blue",6);
                     [a[j], a[j + 1]] = [a[j + 1], a[j]];
                 }
                 else {
-                    update(a, j, "red",4);
-                    update(a, j + 1, "red",4);
+                    update(a, j, "red",6);
+                    update(a, j + 1, "red",6);
                 }
-                update_height(a, j, "greenyellow",4);
-                update(a, j + 1, "greenyellow",4);
+                update_height(a, j, "greenyellow",6);
+                update(a, j + 1, "greenyellow",6);
             }
-            update(a, a.length - 1 - i, "orange",4);
+            update(a, a.length - 1 - i, "orange",6);
         }
         update(a,0,"orange",3)
         setTimeout(()=>{changestate(false)},c_delay);
