@@ -219,14 +219,14 @@ function Sorting_visualization() {
             }
             else
             {
-                update(a,i,"red",1);
+                update(a,i,"blue",1);
                 update(a,i,"greenyellow",1);
             }
         }
         update(a,index+1,"red",1);
         [a[index + 1], a[end]] = [a[end], a[index + 1]];
         update_height(a,end,"greenyellow",1);
-        update(a,index+1,"blue",1);
+        update(a,index+1,"orange",1);
         return index + 1;
     }
 
